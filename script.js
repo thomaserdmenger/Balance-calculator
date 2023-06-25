@@ -27,6 +27,11 @@ const handleClick = e => {
   } else {
     balanceNumberEl.textContent -= amount
   }
+
+  // Make red if balance negative
+  balanceNumberEl.innerHTML < 0
+    ? balanceNumberEl.classList.add('negative-balance')
+    : balanceNumberEl.classList.remove('negative-balance')
 }
 
 transactionsEl.addEventListener('click', handleClick)

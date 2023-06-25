@@ -241,3 +241,7 @@ body {
 .transaction:hover .transaction__btn {
   transform: translate(-50%, -50%);
 }
+
+.negative-balance {
+  color: red;
+}
