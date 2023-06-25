@@ -78,7 +78,7 @@ const handleSubmit = e => {
   inputDescriptionEl.blur()
   inputAmountEl.blur()
 
-  // Increase income number and decrease expenses number
+  // Increase income and expenses number
   if (amount > 0) {
     const currentIncome = +numberIncomeEl.textContent
     const updatedIncome = currentIncome + amount
@@ -87,6 +87,17 @@ const handleSubmit = e => {
     const currentExpense = +numberExpesesEl.textContent
     const updatedExpense = currentExpense - amount
     numberExpesesEl.textContent = updatedExpense
+  }
+
+  // Update balance number
+  if (amount > 0) {
+    const currentBalance = +balanceNumberEl.textContent
+    const updatedBalance = currentBalance + amount
+    balanceNumberEl.textContent = updatedBalance
+  } else {
+    const currentBalance = +balanceNumberEl.textContent
+    const updatedBalance = currentBalance - amount * -1
+    balanceNumberEl.textContent = updatedBalance
   }
 
   transactionsEl.insertAdjacentHTML('afterbegin', transaction)
