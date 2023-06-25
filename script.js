@@ -15,7 +15,15 @@ const handleClick = e => {
   const amountEl = clickedEl.querySelector('.transaction__amount')
   const amount = +amountEl.textContent // Unery plus operator => converts string into number
 
-  amount > 0 ? (numberIncomeEl.textContent -= amount) : (numberExpesesEl.textContent -= amount * -1)
+  if (amount > 0) {
+    const currentIncome = +numberIncomeEl.textContent
+    const updatedIncome = currentIncome - amount
+    numberIncomeEl.textContent = updatedIncome
+  } else {
+    const currentExpense = +numberExpesesEl.textContent
+    const updatedExpense = currentExpense - amount * -1
+    numberExpesesEl.textContent = updatedExpense
+  }
 
   // Updade balance
   amount > 0 ? (balanceNumberEl.textContent -= amount) : (balanceNumberEl.textContent -= amount)
@@ -60,6 +68,19 @@ const handleSubmit = e => {
   // Unfocus (blur) form inputs
   inputDescriptionEl.blur()
   inputAmountEl.blur()
+
+  // Increase income number
+  if (amount > 0) {
+    // let currentIncome = +numberIncomeEl.textContent
+    // console.log(typeof numberExpesesEl.textContent)
+    numberIncomeEl.textContent += amount
+
+    // console.log(currentIncome, amount)
+    // console.log(typeof currentIncome, typeof amount)
+
+    // currentIncome += amount
+    // console.log(currentIncome)
+  }
 
   transactionsEl.insertAdjacentHTML('afterbegin', transaction)
 }
