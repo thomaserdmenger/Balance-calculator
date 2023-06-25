@@ -26,4 +26,16 @@ const handleClick = e => {
     : balanceNumberEl.classList.remove('negative-balance')
 }
 
+const handleSubmit = e => {
+  // Prevent form from default behaviour
+  e.preventDefault()
+
+  // Get input values
+  const description = inputDescriptionEl.value
+  const amount = +inputAmountEl.value
+
+  transactionsEl.insertAdjacentHTML('afterbegin', transaction)
+}
+
 transactionsEl.addEventListener('click', handleClick)
+formEl.addEventListener('submit', handleSubmit)
