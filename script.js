@@ -17,10 +17,15 @@ const handleClick = e => {
 
   if (amount > 0) {
     numberIncomeEl.textContent -= amount
-    // balanceNumberEl.textContent -= amount
-  } else if (amount < 0) {
+  } else {
     numberExpesesEl.textContent -= amount * -1
-    // balanceNumberEl.textContent -= amount
+  }
+
+  // Updade balance
+  if (amount > 0) {
+    balanceNumberEl.textContent -= amount
+  } else {
+    balanceNumberEl.textContent -= amount
   }
 }
 
