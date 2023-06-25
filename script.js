@@ -15,11 +15,7 @@ const handleClick = e => {
   const amountEl = clickedEl.querySelector('.transaction__amount')
   const amount = +amountEl.textContent // Unery plus operator => converts string into number
 
-  if (amount > 0) {
-    numberIncomeEl.textContent -= amount
-  } else {
-    numberExpesesEl.textContent -= amount * -1
-  }
+  amount > 0 ? (numberIncomeEl.textContent -= amount) : (numberExpesesEl.textContent -= amount * -1)
 
   // Updade balance
   amount > 0 ? (balanceNumberEl.textContent -= amount) : (balanceNumberEl.textContent -= amount)
