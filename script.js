@@ -100,6 +100,11 @@ const handleSubmit = e => {
     balanceNumberEl.textContent = updatedBalance
   }
 
+  // Make red if balance negative
+  balanceNumberEl.textContent < 0
+    ? balanceNumberEl.classList.add('negative-balance')
+    : balanceNumberEl.classList.remove('negative-balance')
+
   transactionsEl.insertAdjacentHTML('afterbegin', transaction)
 }
 
