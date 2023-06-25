@@ -57,6 +57,10 @@ const handleSubmit = e => {
   inputDescriptionEl.value = ''
   inputAmountEl.value = ''
 
+  // Unfocus (blur) form inputs
+  inputDescriptionEl.blur()
+  inputAmountEl.blur()
+
   transactionsEl.insertAdjacentHTML('afterbegin', transaction)
 }
 
