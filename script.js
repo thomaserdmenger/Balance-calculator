@@ -26,7 +26,16 @@ const handleClick = e => {
   }
 
   // Updade balance
-  amount > 0 ? (balanceNumberEl.textContent -= amount) : (balanceNumberEl.textContent -= amount)
+
+  if (amount > 0) {
+    const currentBalance = +balanceNumberEl.textContent
+    const updatetBalance = currentBalance - amount
+    balanceNumberEl.textContent = updatetBalance
+  } else {
+    const currentBalance = +balanceNumberEl.textContent
+    const updatetBalance = currentBalance + amount * -1
+    balanceNumberEl.textContent = updatetBalance
+  }
 
   // Make red if balance negative
   balanceNumberEl.innerHTML < 0
