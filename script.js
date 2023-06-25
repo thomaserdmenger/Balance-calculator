@@ -34,6 +34,25 @@ const handleSubmit = e => {
   const description = inputDescriptionEl.value
   const amount = +inputAmountEl.value
 
+  // Create transaction item HTML
+  let transaction = ''
+
+  if (amount > 0) {
+    transaction = `
+        <li class="transaction transaction--income">
+            <span class="transaction__text">${description}</span>
+            <span class="transaction__amount">+${amount}</span>
+            <button class="transaction__btn">X</button>
+        </li>`
+  } else {
+    transaction = `
+        <li class="transaction transaction--expense">
+            <span class="transaction__text">${description}</span>
+            <span class="transaction__amount">${amount}</span>
+            <button class="transaction__btn">X</button>
+        </li>`
+  }
+
   transactionsEl.insertAdjacentHTML('afterbegin', transaction)
 }
 
