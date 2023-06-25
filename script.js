@@ -38,7 +38,7 @@ const handleClick = e => {
   }
 
   // Make red if balance negative
-  balanceNumberEl.innerHTML < 0
+  balanceNumberEl.textContent < 0
     ? balanceNumberEl.classList.add('negative-balance')
     : balanceNumberEl.classList.remove('negative-balance')
 }
