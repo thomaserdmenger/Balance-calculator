@@ -53,6 +53,10 @@ const handleSubmit = e => {
         </li>`
   }
 
+  // Clear input after submit
+  inputDescriptionEl.value = ''
+  inputAmountEl.value = ''
+
   transactionsEl.insertAdjacentHTML('afterbegin', transaction)
 }
 
